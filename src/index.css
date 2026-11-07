@@ -4,145 +4,374 @@
 :root { font-family: 'DM Sans', sans-serif; color: #142550; background: #f8f6ef; font-synthesis: none; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; }
+body { margin: 0; min-width: 320px; -webkit-font-smoothing: antialiased; }
 button, input, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-.sock-art { display: block; width: 100%; height: 100%; overflow: visible; }
+
 .eyebrow { margin: 0 0 14px; font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
 .mini-logo { display: inline-flex; align-items: center; gap: 10px; line-height: 1.05; font-weight: 700; font-size: 13px; }
 .mini-logo b { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #d2f244; color: #152650; font-size: 12px; letter-spacing: -.06em; border: 2px solid currentColor; }
-.button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border-radius: 999px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; transition: transform .2s, box-shadow .2s; }
-.button:hover { transform: translateY(-3px); }
-.button.dark { color: white; background: #172650; box-shadow: 5px 5px 0 #d1f044; }
-.section-pad { padding: 110px max(5vw, 24px); }
-.section-heading { display: grid; grid-template-columns: 1fr 420px; align-items: end; gap: 40px; margin-bottom: 54px; }
-.section-heading h2 { margin: 0; font: 800 clamp(46px, 6vw, 82px)/.9 'Space Grotesk'; letter-spacing: -.07em; text-transform: uppercase; }
-.section-heading > p { max-width: 430px; margin: 0; font-size: 16px; line-height: 1.7; }
 
-/* VERSION 2 */
-.v2 { padding-bottom: 76px; overflow: hidden; color: #eff7ff; background: #0b0e14; font-family: 'Space Grotesk', sans-serif; }
-.discount-strip { position: relative; z-index: 3; height: 40px; padding: 0 5vw; display: flex; align-items: center; justify-content: center; gap: 40px; color: #0b0e14; background: #d6ff45; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
-.discount-strip span { font-weight: 800; }.discount-strip a { position: absolute; right: 5vw; font-weight: 800; }
-.v2-nav { height: 86px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #263043; }
-.v2 .mini-logo b { border-color: #d6ff45; background: transparent; color: #d6ff45; }.v2 .mini-logo { color: white; }
-.v2-nav nav { display: flex; gap: 40px; color: #8f9aad; font-size: 12px; }
-.availability { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }.availability i { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: #d6ff45; box-shadow: 0 0 10px #d6ff45; }
-.cosmic-hero { position: relative; min-height: 700px; padding: 80px 6vw 90px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 60px; border-bottom: 1px solid #253046; background: radial-gradient(circle at 75% 50%, #172d51 0, transparent 35%), linear-gradient(135deg,#0b0e14,#0b101b); }
-.cosmic-hero:before { content: ''; position: absolute; inset: 0; opacity: .15; background-image: radial-gradient(#bdeeff 1px, transparent 1px); background-size: 34px 34px; mask-image: linear-gradient(to right, transparent, #000); }
-.cosmic-copy { position: relative; z-index: 2; }
-.cosmic-copy .eyebrow { color: #7dcff4; }
-.cosmic-copy h1 { margin: 0; font: 700 clamp(52px, 6.5vw, 100px)/.88 'Space Grotesk'; letter-spacing: -.065em; }
-.cosmic-copy h1 span { color: #ff7d34; }
-.cosmic-copy .lede { max-width: 570px; color: #a7b1c2; font-size: 18px; line-height: 1.65; }
-.cosmic-signup { max-width: 620px; margin-top: 45px; padding: 16px 16px 16px 22px; display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 16px; background: rgba(255,255,255,.07); border: 1px solid #38465d; border-radius: 14px; backdrop-filter: blur(10px); }
-.cosmic-signup p { margin: 0; display: flex; flex-direction: column; font-size: 12px; }.cosmic-signup p span { color: #8290a7; margin-top: 3px; font-size: 10px; }
-.v2 .email-signup input { color: white; background: #111723; border-color: #394359; border-radius: 8px; }.v2 .email-signup button { color: #0b0e14; background: #d6ff45; border: 0; border-radius: 8px; }
-.cosmic-stage { position: relative; height: 540px; display: grid; place-items: center; }
-.orbit-ring { position: absolute; width: 470px; height: 250px; border: 1px solid #ff7d34; border-radius: 50%; transform: rotate(-25deg); box-shadow: 0 0 30px #ff7d3433; }
-.cosmic-card { position: relative; width: 340px; padding: 18px; transform: rotate(3deg); background: linear-gradient(150deg,rgba(255,255,255,.13),rgba(255,255,255,.03)); border: 1px solid #59708c; border-radius: 18px; box-shadow: 0 35px 60px #0009; backdrop-filter: blur(15px); }
-.cosmic-card .sock-art { height: 390px; }.card-label { position: absolute; z-index: 2; padding: 7px 10px; color: #0b0e14; background: #7ed6f8; font-size: 9px; font-weight: 700; }
-.cosmic-card > div { display: flex; justify-content: space-between; padding: 15px 4px 2px; border-top: 1px solid #516078; font-size: 11px; }
-.floating-note { position: absolute; padding: 9px 13px; color: #bec9d8; background: #111722; border: 1px solid #39475d; border-radius: 999px; font-size: 9px; text-transform: uppercase; }.note-one { top: 100px; right: -5px; }.note-two { bottom: 90px; left: -20px; }
-.cosmic-work { padding: 110px 5vw; }
-.cosmic-section-head { margin-bottom: 50px; display: flex; justify-content: space-between; align-items: end; }
-.cosmic-section-head h2 { margin: 8px 0 0; font-size: clamp(42px, 6vw, 78px); letter-spacing: -.05em; line-height: .9; }.cosmic-section-head > p { max-width: 390px; color: #8591a5; line-height: 1.6; font-size: 13px; }
-.cosmic-products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.cosmic-product-art { position: relative; height: 350px; background: linear-gradient(145deg,#151c27,#10151d); border: 1px solid #283448; border-radius: 8px; overflow: hidden; }
-.cosmic-product-art > span { position: absolute; top: 14px; left: 14px; z-index: 2; color: #708098; font-size: 10px; }.cosmic-product-art .sock-art { width: 90%; height: 92%; margin: 5% auto; transition: transform .3s; }.cosmic-products article:hover .sock-art { transform: scale(1.06); }
-.cosmic-products h3 { margin: 18px 0 4px; font-size: 15px; }.cosmic-products article > p { margin: 0; color: #6f7c91; font-size: 11px; }
-.swatches { display: flex; gap: 5px; margin-top: 14px; }.swatches i { width: 16px; height: 4px; border-radius: 3px; }
-.cosmic-tabs { padding: 0 5vw 120px; }
-.tab-buttons { display: flex; border-bottom: 1px solid #283448; }
-.tab-buttons button { flex: 1; padding: 25px 10px; color: #69768b; background: none; border: 0; border-bottom: 2px solid transparent; cursor: pointer; font-weight: 700; font-size: 18px; text-align: left; }
-.tab-buttons button span { float: right; font-size: 10px; }.tab-buttons button.active { color: #ecf8ff; border-color: #d6ff45; }
-.tab-content { min-height: 280px; padding-top: 30px; display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; animation: appear .35s ease; }
-@keyframes appear { from { opacity: 0; transform: translateY(10px); } }
-.tab-content .art-tile { background: #131924; border-color: #34435b; color: #dce8f8; }.tab-sock { height: 280px; position: relative; background: #101722; border: 1px solid #243149; border-radius: 10px; overflow: hidden; }.tab-sock .sock-art { height: 240px; }.tab-sock span { position: absolute; bottom: 12px; left: 14px; font-size: 11px; }
-.cosmic-contact { padding: 100px 7vw; display: grid; grid-template-columns: .9fr 1.1fr; gap: 10vw; background: #111722; border-block: 1px solid #2c384b; }.cosmic-contact h2 { margin: 0; font-size: clamp(48px, 6vw, 76px); line-height: .92; letter-spacing: -.05em; }.cosmic-contact h2 span { color: #7ed6f8; }.cosmic-contact > div > p:not(.eyebrow) { color: #8190a8; max-width: 450px; line-height: 1.6; }
-.tiktok-dark { color: #e8f1ff; background: transparent; border: 1px solid #3a485f; border-radius: 5px; }.tiktok-dark b { color: #d6ff45; }
-.dark-form { color: #dce8f8; }.dark-form input,.dark-form textarea { border-color: #425069; }.dark-form button { background: #ff7d34; }
-.cosmic-footer { min-height: 150px; padding: 35px 5vw 90px; display: flex; align-items: center; justify-content: space-between; color: #68758a; font-size: 9px; letter-spacing: .08em; }
+/* Form Styling & Email Signups */
+.email-signup { display: flex; gap: 8px; width: 100%; flex-direction: column; }
+.email-signup input { min-width: 0; flex: 1; min-height: 48px; padding: 12px 18px; border: 1px solid #d5c4e8; border-radius: 12px; color: #3a2a53; background: #fff; outline: none; }
+.email-signup button { min-height: 48px; padding: 0 20px; border: 0; border-radius: 12px; color: white; background: #8457b0; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background .2s; }
+.email-signup button:hover { background: #6f4497; }
 
-/* Lavender orbit theme */
-.v2 { color: #302550; background: #f3edff; }
-.v2 .discount-strip { color: #3b225d; background: #d9ff5a; border-bottom: 1px solid #b6d63a; }
-.v2-nav { background: rgba(250,247,255,.88); border-color: #d9ccec; backdrop-filter: blur(18px); }
+/* VERSION 2 - LAVENDER ORBIT THEME */
+.v2 { color: #302550; background: #f3edff; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+
+/* Top Banner Strip */
+.discount-strip { position: relative; z-index: 3; min-height: 40px; padding: 8px 5vw; display: flex; align-items: center; justify-content: center; gap: 20px; color: #3b225d; background: #d9ff5a; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid #b6d63a; text-align: center; }
+.discount-strip span { font-weight: 800; }
+.discount-strip a { font-weight: 800; text-decoration: underline; }
+
+/* Navigation */
+.v2-nav { height: 76px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: rgba(250,247,255,.88); border-bottom: 1px solid #d9ccec; backdrop-filter: blur(18px); }
 .v2 .mini-logo { color: #342650; }
 .v2 .mini-logo b { color: #493067; background: #d9ff5a; border-color: #493067; }
-.v2-nav nav { color: #77698c; }
+.v2-nav nav { display: flex; gap: 32px; color: #77698c; font-size: 13px; font-weight: 600; }
 .v2-nav nav a:hover { color: #f45c9c; }
-.availability { color: #645777; }
-.availability i { background: #77dba5; box-shadow: 0 0 0 4px #d9f5e5, 0 0 12px #77dba5; }
-.cosmic-hero {
-  border-color: #d7c8ea;
-  background:
-    radial-gradient(circle at 88% 22%, rgba(255,244,156,.95) 0 3%, transparent 3.2%),
-    radial-gradient(circle at 72% 52%, rgba(184,151,237,.36) 0, transparent 32%),
-    radial-gradient(circle at 18% 15%, rgba(255,166,205,.28) 0, transparent 23%),
-    linear-gradient(145deg,#fdf8ff 0%,#eee3ff 53%,#d8ecff 100%);
+.availability { color: #645777; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.availability i { display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: #77dba5; box-shadow: 0 0 0 3px #d9f5e5, 0 0 10px #77dba5; }
+
+/* Cosmic Hero */
+.cosmic-hero { 
+  position: relative; 
+  padding: 60px 5vw 80px; 
+  display: grid; 
+  grid-template-columns: 1.1fr .9fr; 
+  align-items: center; 
+  gap: 40px; 
+  border-bottom: 1px solid #d7c8ea; 
+  background: radial-gradient(circle at 88% 22%, rgba(255,244,156,.95) 0 3%, transparent 3.2%), radial-gradient(circle at 72% 52%, rgba(184,151,237,.36) 0, transparent 32%), radial-gradient(circle at 18% 15%, rgba(255,166,205,.28) 0, transparent 23%), linear-gradient(145deg,#fdf8ff 0%,#eee3ff 53%,#d8ecff 100%); 
 }
-.cosmic-hero:before {
-  opacity: .7;
-  background-image:
-    radial-gradient(circle, #fff 0 2px, transparent 2.5px),
-    radial-gradient(circle, #b78bdc 0 1px, transparent 1.5px);
-  background-position: 0 0, 15px 17px;
-  background-size: 70px 70px, 48px 48px;
-  mask-image: linear-gradient(to right, transparent 5%, #000 50%);
+.cosmic-hero:before { content: ''; position: absolute; inset: 0; opacity: .7; background-image: radial-gradient(circle, #fff 0 2px, transparent 2.5px), radial-gradient(circle, #b78bdc 0 1px, transparent 1.5px); background-position: 0 0, 15px 17px; background-size: 70px 70px, 48px 48px; mask-image: linear-gradient(to right, transparent 5%, #000 50%); }
+.cosmic-copy { 
+  position: relative; 
+  z-index: 2; 
+  display: flex; 
+  flex-direction: column; 
 }
 .cosmic-copy .eyebrow { color: #8056a5; }
-.cosmic-copy h1 { color: #392859; text-shadow: 3px 3px 0 rgba(255,255,255,.7); }
+.cosmic-copy h1 { margin: 0; font: 700 clamp(36px, 5vw, 80px)/.95 'Space Grotesk'; letter-spacing: -.05em; color: #392859; text-shadow: 2px 2px 0 rgba(255,255,255,.7); }
 .cosmic-copy h1 span { color: #f45c9c; }
-.cosmic-copy .lede { color: #70627f; }
-.cosmic-signup { background: rgba(255,255,255,.67); border: 1px solid #cbb9df; box-shadow: 0 15px 35px rgba(94,64,127,.1); }
-.cosmic-signup p span { color: #877895; }
-.v2 .email-signup input { color: #3a2a53; background: #fff; border-color: #d5c4e8; }
-.v2 .email-signup input::placeholder { color: #9a8ba9; }
-.v2 .email-signup button { color: #fff; background: #8457b0; box-shadow: 0 5px 0 #634083; }
-.cosmic-stage:before { content: ''; position: absolute; width: 430px; height: 430px; border-radius: 50%; background: rgba(255,255,255,.28); border: 1px solid rgba(255,255,255,.75); box-shadow: inset 0 0 50px rgba(159,123,211,.12), 0 20px 70px rgba(110,72,156,.14); }
-.orbit-ring { border: 2px dashed rgba(134,86,177,.58); box-shadow: none; animation: orbit-turn 18s linear infinite; }
+.cosmic-copy .lede { max-width: 540px; margin-top: 18px; color: #70627f; font-size: 16px; line-height: 1.6; }
+.cosmic-signup { max-width: 580px; margin-top: 32px; padding: 18px; display: grid; align-items: center; gap: 16px; background: rgba(255,255,255,.67); border: 1px solid #cbb9df; border-radius: 16px; box-shadow: 0 15px 35px rgba(94,64,127,.1); }
+.cosmic-signup p { margin: 0; display: flex; flex-direction: column; font-size: 13px; color: #3a2a53; }
+.cosmic-signup p span { color: #877895; margin-top: 3px; font-size: 11px; }
+
+/* Stage & Hero Card */
+.cosmic-stage { position: relative; height: 480px; display: grid; place-items: center; }
+.orbit-ring { position: absolute; width: 380px; height: 210px; border: 2px dashed rgba(134,86,177,.58); border-radius: 50%; transform: rotate(-25deg); animation: orbit-turn 18s linear infinite; }
 @keyframes orbit-turn { to { transform: rotate(335deg); } }
-.cosmic-card { background: linear-gradient(150deg,rgba(255,255,255,.82),rgba(235,219,255,.55)); border: 2px solid rgba(94,60,128,.58); box-shadow: 12px 18px 0 rgba(246,112,166,.26), 0 32px 60px rgba(76,45,112,.22); }
-.cosmic-card > div { color: #392750; border-color: #c9b7dc; }
-.card-label { color: #42285d; background: #d9ff5a; border: 1px solid #684487; border-radius: 999px; }
-.floating-note { color: #59446e; background: rgba(255,255,255,.9); border: 1px solid #c6addc; box-shadow: 0 8px 18px rgba(86,52,119,.12); }
+.cosmic-card { position: relative; width: 300px; padding: 16px; background: linear-gradient(150deg,rgba(255,255,255,.82),rgba(235,219,255,.55)); border: 2px solid rgba(94,60,128,.58); border-radius: 18px; box-shadow: 10px 14px 0 rgba(246,112,166,.26), 0 30px 50px rgba(76,45,112,.2); transition: transform .2s ease; }
+.card-label { position: absolute; z-index: 2; top: -12px; left: 16px; padding: 5px 12px; color: #42285d; background: #d9ff5a; border: 1px solid #684487; border-radius: 999px; font-size: 10px; font-weight: 700; }
+.placeholder-img { width: 100%; margin-bottom: 30px; height: auto; border-radius: 12px; object-fit: cover; display: block; }
+
+/* Floating Stars & Accents */
 .space-spark { position: absolute; z-index: 3; color: #fff29a; -webkit-text-stroke: 1px #7a4a9d; text-shadow: 0 0 14px #fff; animation: twinkle 2.4s ease-in-out infinite; }
-.spark-one { top: 54px; left: 12%; font-size: 34px; }
-.spark-two { right: 4%; bottom: 95px; font-size: 24px; animation-delay: -.8s; }
-.spark-three { top: 28%; right: 6%; color: #ff91c4; font-size: 16px; animation-delay: -1.5s; }
+.spark-one { top: 20px; left: 8%; font-size: 28px; }
+.spark-two { right: 4%; bottom: 40px; font-size: 22px; animation-delay: -.8s; }
+.spark-three { top: 20%; right: 6%; color: #ff91c4; font-size: 16px; animation-delay: -1.5s; }
 @keyframes twinkle { 50% { transform: scale(.72) rotate(18deg); opacity: .55; } }
-.cute-planet { position: absolute; z-index: 2; width: 55px; height: 55px; border: 2px solid #674181; border-radius: 50%; background: #ff93c0; box-shadow: inset -9px -7px 0 #ee6fa7, 0 8px 18px rgba(90,53,121,.15); }
-.cute-planet:before { content: ''; position: absolute; width: 86px; height: 24px; left: -17px; top: 13px; border: 3px solid #674181; border-radius: 50%; transform: rotate(-12deg); }
-.cute-planet:after { content: ''; position: absolute; z-index: 2; width: 55px; height: 27px; left: -2px; top: 26px; border-radius: 0 0 30px 30px; background: #ee6fa7; }
-.cute-planet i { position: absolute; z-index: 3; width: 4px; height: 5px; top: 19px; left: 18px; border-radius: 50%; background: #674181; box-shadow: 17px 0 #674181; }
-.planet-one { right: 7%; top: 78px; transform: rotate(12deg); }
-.planet-two { width: 34px; height: 34px; left: 2%; bottom: 100px; background: #88dcf5; transform: rotate(-18deg) scale(.8); }
-.planet-two:before { width: 60px; height: 17px; left: -15px; top: 8px; }
-.planet-two:after { width: 34px; height: 17px; top: 17px; background: #65c4e5; }
-.planet-two i { top: 10px; left: 9px; box-shadow: 11px 0 #674181; }
-.cosmic-work { color: #34264e; background: #f8f4ff; }
-.cosmic-section-head > div > p { color: #8b68a9; }
-.cosmic-section-head > p { color: #766883; }
-.cosmic-product-art { background: linear-gradient(145deg,#e9ddfa,#d7eaff); border-color: #c2acd9; }
-.cosmic-product-art:after { content: '✦'; position: absolute; right: 18px; top: 14px; color: #fff; font-size: 24px; text-shadow: 0 0 8px #ac80d2; }
-.cosmic-product-art > span { color: #76598e; }
-.cosmic-products article > p { color: #82758f; }
-.cosmic-tabs { background: #f8f4ff; }
-.tab-buttons { border-color: #d4c6e3; }
-.tab-buttons button { color: #9a8aa9; }
+.cute-planet { position: absolute; z-index: 2; width: 48px; height: 48px; border: 2px solid #674181; border-radius: 50%; background: #ff93c0; }
+.planet-one { right: 5%; top: 40px; }
+.planet-two { width: 32px; height: 32px; left: 4%; bottom: 60px; background: #88dcf5; }
+.floating-note { z-index: 100; position: absolute; padding: 7px 14px; color: #59446e; background: rgba(255,255,255,.9); border: 1px solid #c6addc; border-radius: 999px; font-size: 10px; font-weight: 700; text-transform: uppercase; box-shadow: 0 8px 18px rgba(86,52,119,.12); }
+.note-one { top: 60px; right: 0; }
+.note-two { bottom: 50px; left: 0; }
+
+/* Content Sections & Grids */
+.cosmic-work { padding: 80px 5vw; background: #f8f4ff; border-bottom: 1px solid #d4c6e3; }
+.cosmic-section-head { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.cosmic-section-head h2 { margin: 6px 0 0; font-size: clamp(28px, 4.5vw, 60px); letter-spacing: -.04em; line-height: 1; color: #3d2c57; }
+.cosmic-section-head > p { max-width: 400px; color: #766883; line-height: 1.6; font-size: 14px; margin: 0; }
+.cosmic-section-head.centered { justify-content: center; text-align: center; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.content-card { background: #fff; padding: 24px; border-radius: 16px; border: 1px solid #cbb8dd; box-shadow: 0 4px 12px rgba(132,87,176,.05); }
+.card-icon { font-size: 28px; display: block; margin-bottom: 12px; }
+.content-card h3 { margin: 0 0 8px; font-size: 16px; color: #3a2a53; }
+.content-card p { margin: 0; color: #766883; font-size: 13px; line-height: 1.6; }
+
+.method-card { background: linear-gradient(145deg, #e9ddfa, #d7eaff); padding: 24px; border-radius: 16px; border: 1px solid #c2acd9; }
+.step-badge { font-size: 12px; font-weight: 800; color: #8457b0; }
+.method-card h3 { margin: 8px 0; font-size: 18px; color: #3d2c57; }
+.method-card p { margin: 0; color: #766883; font-size: 13px; line-height: 1.5; }
+
+/* Products Catalog */
+.cosmic-products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.cosmic-product-art { position: relative; height: 320px; background: linear-gradient(145deg,#e9ddfa,#d7eaff); border: 1px solid #c2acd9; border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.cosmic-product-art > span { position: absolute; top: 12px; left: 12px; z-index: 2; color: #76598e; font-size: 11px; font-weight: 700; }
+.cosmic-products h3 { margin: 14px 0 4px; font-size: 16px; color: #34264e; }
+.cosmic-products article > p { margin: 0; color: #82758f; font-size: 12px; }
+.swatches { display: flex; gap: 6px; margin-top: 10px; }
+.swatches i { width: 18px; height: 5px; border-radius: 3px; }
+
+/* Tabs */
+.cosmic-tabs { padding: 0 5vw 80px; background: #f8f4ff; }
+.tab-buttons { display: flex; border-bottom: 2px solid #d4c6e3; }
+.tab-buttons button { flex: 1; padding: 18px 10px; color: #9a8aa9; background: none; border: 0; border-bottom: 3px solid transparent; cursor: pointer; font-weight: 700; font-size: 16px; text-align: left; }
 .tab-buttons button.active { color: #3d2c57; border-color: #f45c9c; }
-.tab-content .art-tile { color: #3a2b53; background: #fff; border-color: #cbb8dd; }
-.tab-sock { background: linear-gradient(160deg,#e6d8f7,#cae8f7); border-color: #baa2d0; }
-.tab-sock span { color: #3a2b53; font-weight: 700; }
-.cosmic-contact { color: #38284f; background: linear-gradient(135deg,#e8d9fa,#d8eafa); border-color: #c9b8db; }
+.tab-content { padding-top: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tab-sock { position: relative; background: linear-gradient(160deg,#e6d8f7,#cae8f7); border: 1px solid #baa2d0; border-radius: 12px; overflow: hidden; padding: 16px; }
+.tab-sock span { position: absolute; bottom: 12px; left: 14px; font-size: 12px; font-weight: 700; color: #3a2b53; }
+
+/* Bundle Cards */
+.bundle-card { background: #fff; border-radius: 16px; border: 1px solid #cbb8dd; overflow: hidden; padding: 16px; }
+.bundle-card h4 { margin: 12px 0 4px; font-size: 16px; color: #3a2a53; }
+.bundle-card p { margin: 0; color: #766883; font-size: 12px; }
+.target-price { font-weight: 800; color: #8457b0; font-size: 15px; margin: 0; }
+
+/* FAQ Section */
+.faq-container { max-width: 680px; display: flex; flex-direction: column; gap: 12px; }
+.faq-card { background: #fff; padding: 16px 20px; border-radius: 12px; border: 1px solid #cbb8dd; cursor: pointer; }
+.faq-card summary { font-weight: 700; font-size: 15px; outline: none; color: #3d2c57; }
+.faq-card p { margin-top: 10px; margin-bottom: 0; color: #766883; font-size: 13px; line-height: 1.6; }
+
+/* Final CTA Contact Section */
+.cosmic-contact { padding: 80px 7vw; display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; color: #38284f; background: linear-gradient(135deg,#e8d9fa,#d8eafa); border-top: 1px solid #c9b8db; border-bottom: 1px solid #c9b8db; }
+.cosmic-contact h2 { margin: 0; font-size: clamp(32px, 5vw, 68px); line-height: .95; letter-spacing: -.04em; }
 .cosmic-contact h2 span { color: #e54e91; }
-.cosmic-contact > div > p:not(.eyebrow) { color: #776986; }
-.tiktok-dark { color: #442e5b; background: rgba(255,255,255,.55); border-color: #bda4d3; }
-.tiktok-dark b { color: #d83f83; }
-.dark-form { color: #49365d; }
-.dark-form input,.dark-form textarea { border-color: #9f89b5; }
-.dark-form input::placeholder,.dark-form textarea::placeholder { color: #9686a5; }
-.dark-form button { color: white; background: #8457b0; }
-.cosmic-footer { color: #877994; background: #f3edff; }
+.cosmic-contact p { color: #776986; max-width: 450px; line-height: 1.6; font-size: 14px; }
+
+/* Footer */
+.cosmic-footer { min-height: 100px; padding: 30px 5vw 30px; display: flex; align-items: center; justify-content: space-between; color: #877994; font-size: 10px; letter-spacing: .08em; background: #f3edff; }
+
+/* Base Desktop Styling */
+.desktop-stage { display: grid !important; }
+.mobile-stage { display: none !important; }
+
+/* -------------------------------------------------------------
+   MOBILE BREAKPOINTS & RESPONSIVE TWEAKS
+------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .cosmic-hero { grid-template-columns: 1fr; padding-top: 40px; gap: 40px; }
+  .cosmic-section-head { flex-direction: column; align-items: flex-start; }
+  .cosmic-contact { grid-template-columns: 1fr; gap: 32px; }
+  .desktop-only { display: none !important; }
+
+  .desktop-stage { display: none !important; }
+  .mobile-stage { 
+    display: grid !important; 
+    width: 100%; 
+    height: 420px; 
+    margin: 24px 0; 
+  }
+
+  .cosmic-hero { 
+    grid-template-columns: 1fr; 
+    padding-top: 30px; 
+  }
+
+  .cosmic-signup { 
+    margin-top: 10px; 
+  }
+}
+
+@media (max-width: 680px) {
+  .discount-strip { font-size: 10px; justify-content: center; }
+  .v2-nav { height: 64px; }
+  .cosmic-hero { 
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px; 
+    gap: 32px; 
+  }
+
+  /* 1. Header Copy stays at the top */
+  .cosmic-copy h1,
+  .cosmic-copy .eyebrow,
+  .cosmic-copy .lede {
+    order: 1;
+  }
+
+  /* 2. Move Hero Stage (Batch Preview Card) second */
+  .cosmic-stage {
+    order: 2;
+    width: 100%;
+    height: 380px;
+    margin-top: 30px;
+  }
+
+  /* 3. Move Waitlist Form Box third */
+  .cosmic-signup {
+    order: 3;
+    margin-top: 20px;
+  }
+  .cosmic-signup { grid-template-columns: 1fr; text-align: left; gap: 12px; padding: 14px; }
+  .email-signup input, .email-signup button { width: 100%; min-height: 48px; }
+  
+  .cosmic-stage { height: 420px; }
+  .cosmic-card { width: 260px; padding: 12px; }
+  .orbit-ring { width: 320px; height: 180px; }
+  .floating-note { display: none; }
+  
+  .cosmic-work { padding: 50px 20px; }
+  
+  /* Horizontal swipeable lists for catalog on mobile */
+  .scrollable-mobile-list {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scrollable-mobile-list > * {
+    min-width: 78vw;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    height: 450px;
+  }
+
+  .tab-buttons button { font-size: 14px; padding: 12px 6px; }
+  .cosmic-contact { padding: 50px 20px; }
+  .cosmic-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* Single-Row Horizontal Scroll Container for Galleries */
+.tab-scroll-container {
+  padding-top: 24px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+.tab-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 1-Row Card Items sizing */
+.tab-card-item {
+  flex: 0 0 280px;
+  min-width: 280px;
+  scroll-snap-align: start;
+}
+
+/* Ensure mobile layout displays signup form high up before stage */
+@media (max-width: 680px) {
+  .cosmic-hero {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 20px;
+  }
+
+  .cosmic-copy {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cosmic-copy h1,
+  .cosmic-copy .eyebrow,
+  .cosmic-copy .lede {
+    order: 1;
+  }
+
+  .cosmic-signup {
+    order: 2;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .mobile-stage {
+    order: 3;
+    width: 100%;
+    height: 380px;
+    margin-top: 24px;
+  }
+
+  .tab-card-item {
+    flex: 0 0 78vw;
+    min-width: 78vw;
+  }
+}
+
+/* Carousel Wrapper relative container */
+.gallery-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Visibility toggling without unmounting (preserves scroll position) */
+.tab-scroll-container.is-visible {
+  display: flex !important;
+}
+
+.tab-scroll-container.is-hidden {
+  display: none !important;
+}
+
+/* Single-Row Horizontal Scroll Container */
+.tab-scroll-container {
+  padding: 24px 0 12px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+}
+
+.tab-scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.tab-card-item {
+  flex: 0 0 260px;
+  min-width: 260px;
+  scroll-snap-align: start;
+}
+
+/* Scroll Arrow Navigation Buttons */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #cbb8dd;
+  color: #3d2c57;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(61, 44, 87, 0.15);
+  transition: all 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 16px rgba(61, 44, 87, 0.22);
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+@media (max-width: 680px) {
+  .carousel-arrow {
+    display: none; /* Mobile users swipe natively */
+  }
+}
